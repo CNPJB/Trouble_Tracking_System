@@ -1,0 +1,33 @@
+# Dependency folders (ห้ามเอาขึ้นเพราะหนักและเพื่อนรัน npm install เองได้)
+node_modules/
+jspm_packages/
+
+# Debug logs (ไฟล์บันทึกข้อผิดพลาดส่วนตัว)
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Production build (ไฟล์ที่คอมไพล์แล้ว ไม่ใช่ซอร์สโค้ด)
+/build
+/dist
+/out
+
+# Operating System Files (ไฟล์ขยะจาก OS)
+.DS_Store
+Thumbs.db
+
+# API Keys และ Database Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ปล่อยให้ .env.example ขึ้นไปได้เพื่อให้เพื่อนรู้โครงสร้าง
+!.env.example
+
+# IDE Settings (การตั้งค่าส่วนตัวใน VS Code ของแต่ละคน)
+.vscode/
+.idea/
+*.swp
+*.swo
