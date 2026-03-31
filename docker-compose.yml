@@ -36,18 +36,7 @@ services:
       - /app/node_modules
 
   # 3. Frontend (React)
-  client:
-    build:
-      context: ./client
-    container_name: tts_client_container
-    ports:
-      - "3000:3000"
-    stdin_open: true # จำเป็นสำหรับ React เพื่อให้คงสถานะทำงานไว้
-    volumes:
-      - ./client:/app
-      - /app/node_modules
-    depends_on:
-      - server
+  
 
 volumes:
   postgres_data:
