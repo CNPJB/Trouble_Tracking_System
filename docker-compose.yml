@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD:-rootroot}
       POSTGRES_DB: ${DB_NAME:-tts_db}
     ports:
-      - "5433:5432"
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -36,7 +36,16 @@ services:
       - /app/node_modules
 
   # 3. Frontend (React)
-  
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    stdin_open: true # สำหรับ React บางเวอร์ชันเพื่อให้รันได้ใน Docker
+    depends_on:
+      - server
 
 volumes:
   postgres_data:
